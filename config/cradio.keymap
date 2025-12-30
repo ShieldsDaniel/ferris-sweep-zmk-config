@@ -177,7 +177,6 @@
             label = "TD_LINUX";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp GUI>, <&to LINUX>;
         };
@@ -186,7 +185,6 @@
             label = "TD_MAC";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp LCTRL>, <&to MAC>;
         };
