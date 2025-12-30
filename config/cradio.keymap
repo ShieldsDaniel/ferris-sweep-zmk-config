@@ -7,20 +7,21 @@
 
 // Layers
 #define DEFAULT  0
-#define LOWER    1
-#define RAISE    2
-#define ADJUST   3
-#define NUM      4
-#define FUNC     5
-#define MEDIA    6
-#define RESET    7
+#define LINUX    1
+#define LOWER    2
+#define RAISE    3
+#define ADJUST   4
+#define NUM      5
+#define FUNC     6
+#define MEDIA    7
+#define RESET    8
 
 // Helper Constants
 #define MEH(kc) &hl LC(LS(LALT)) kc
 #define SCREEN &kp LG(LS(N4))
 #define RECORD &kp LG(LS(N5))
 #define EURO &kp LA(LS(N2))
-#define GERMAN &td LA(S) LA(U)
+#define GERMAN &th LA(S) LA(U)
 #define SPC_RAISE &lt RAISE SPACE
 #define BT_0 &bt BT_SEL 0
 #define BT_1 &bt BT_SEL 1
@@ -93,19 +94,62 @@
                 , <&macro_tap &kp EQUAL>
                 ;
         };
+        check_linux: check_linux {
+            label = "ZM_check_linux";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap $kp L>
+                , <&macro_tap $kp I>
+                , <&macro_tap $kp N>
+                , <&macro_tap $kp U>
+                , <&macro_tap $kp X>
+                ;
+        };
+        check_mac: check_mac {
+            label = "ZM_check_mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap $kp M>
+                , <&macro_tap $kp A>
+                , <&macro_tap $kp C>
+                ;
+        };
     };
     combos {
         compatible = "zmk,combos";
         combo_reset {
             timeout-ms = <50>;
             key-positions = <20 29>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&to RESET>;
         };
         combo_media {
             timeout-ms = <50>;
             key-positions = <20 21>;
             bindings = <&kp MEDIA>;
+        };
+        combo_linux {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <td_linux>;
+        };
+        combo_check_linux {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            layers = <1>;
+            bindings = check_linux;
+        };
+        combo_linux {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <td_mac>;
+        };
+        combo_check_mac {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = check_mac;
         };
     };
     behaviors {
@@ -118,7 +162,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        td: tapdance {
+        th: tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
             #binding-cells = <2>;
@@ -126,6 +170,18 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        td_linux: tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp GUI>, <&to LINUX>;
+        };
+        td_mac: tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTRL>, <&to MAC>;
         };
     };
 
@@ -140,7 +196,25 @@
         //│  A       │  R       │  S       │  T       │  G  (MEH)│  │  M  (MEH)│  N       │  E       │  I       │  O       │
             &kp A      &kp R      &kp S      &kp T      MEH(G)        MEH(M)     &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H       │  ,       │  .       │  ENTER   │
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H       │  ,  (LINUX) .       │  ENTER   │
+            &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
+                                             &mo LOWER  &sk LCTRL    &sk LSHIFT  SPC_RAISE
+        //                                 ╰──────────┴──────────╯  ╰──────────┴──────────╯
+            >;
+        };
+
+        linux_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  B       │  │  J       │  L       │  U       │  Y       │          │
+            &kp Q      &kp W      &kp F      &kp P      &kp B         &kp J      &kp L      &kp U      &kp Y      &kp BSPC
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  G  (GUI)│  │  M  (GUI)│  N       │  E       │  I       │  O       │
+            &kp A      &kp R      &kp S      &kp T     &mt GUI G     &mt GUI M   &kp N      &kp E      &kp I      &kp O
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H       │  ,    (MAC) .       │  ENTER   │
             &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
@@ -152,8 +226,8 @@
         lower_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESCAPE  │          │          │          │          │  │          │  ===     │          │  "       │ Umlaut/ß │
-            &kp ESC    &none      &none      &none      &none         &none      &js_equal  &none      &kp DQT    GERMAN 
+        //│  ESCAPE  │          │          │          │          │  │ Umlaut/ß │  ===     │          │  "       │  DELETE  │
+            &kp ESC    &none      &none      &none      &none         GERMAN     &js_equal  &none      &kp DQT    &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ?       │  ~       │  _       │  -       │  \ (NUM) │  │  /       │  =       │  +       │  '       │  :       │
             &kp QMARK  &kp TILDE  &kp UNDER  &kp MINUS &lt NUM BSLH   &kp FSLH   &kp EQUAL  &kp PLUS   &kp SQT    &kp COLON
@@ -170,10 +244,10 @@
         raise_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬───────────┬─────────┬──────────╮
-        //│  ESCAPE  │          │          │          │          │  │          │          │  <|       │         │          │
-            &kp ESC    &none      &none      &none      &none         &none      &none      &back_pipe  &none     &none 
+        //│  ESCAPE  │          │          │          │          │  │          │          │  <|       │         │  DELETE  │
+            &kp ESC    &none      &none      &none      &none         &none      &none      &back_pipe  &none     &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼───────────┼─────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │  │  ^ (FUNC) │  &       │  |        │  *      │  ;       │
+        //│  !       │  @       │  #       │  $       │  %       │  │  ^ (FUNC)│  &       │  |        │  *      │  ;       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT  &lt FUNC CARET &kp AMPS   &kp PIPE    &kp STAR  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼───────────┼─────────┼──────────┤
         //│  TAB     │          │          │          │          │  │          │          │  |>       │         │          │
@@ -189,7 +263,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │  │  DOWN    │  LEFT    │          │          │          │
-            &none      &none     &kp LSHFT &kp LEFT_ALT &none         &kp DOWN   &kp LEFT   &none      &none      &none 
+            &none      &none     &kp LSHFT &kp LEFT_ALT &none         &kp DOWN   &kp LEFT   &none      &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  €       │  │          │  )       │  }       │  ]       │  >       │
             &kp LT     &kp LBKT   &kp LBRC   &kp LPAR   EURO          &none      &kp RPAR   &kp RBRC   &kp RBKT   &kp GT
