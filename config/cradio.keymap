@@ -133,7 +133,12 @@
         combo_linux {
             timeout-ms = <50>;
             key-positions = <27 28>;
-            bindings = <&hl GUI (&to LINUX)>;
+            bindings = <&to LINUX>;
+        };
+        combo_mac_os {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp LGUI>;
         };
         combo_check_linux {
             timeout-ms = <50>;
@@ -145,7 +150,13 @@
             timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <1>;
-            bindings = <&hl LCTRL (&to MAC)>;
+            bindings = <&to MAC>;
+        };
+        combo_linux_os {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            layers = <1>;
+            bindings = <&kp LCTRL>;
         };
         combo_check_mac {
             timeout-ms = <50>;
@@ -185,7 +196,7 @@
         //│  A       │  R       │  S       │  T       │  G  (MEH)│  │  M  (MEH)│  N       │  E       │  I       │  O       │
             &kp A      &kp R      &kp S      &kp T      MEH(G)        MEH(M)     &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H       │  ,  (LINUX) .       │  ENTER   │
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H     (OS) ,  (LINUX) .       │  ENTER   │
             &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
@@ -203,7 +214,7 @@
         //│  A       │  R       │  S       │  T       │  G  (GUI)│  │  M  (GUI)│  N       │  E       │  I       │  O       │
             &kp A      &kp R      &kp S      &kp T     &mt GUI G     &mt GUI M   &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H       │  ,    (MAC) .       │  ENTER   │
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H     (OS) ,    (MAC) .       │  ENTER   │
             &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
