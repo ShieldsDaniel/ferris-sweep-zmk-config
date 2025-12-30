@@ -172,7 +172,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        td_linux: tapdance {
+        td_linux: tapdance_linux {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LINUX";
             #binding-cells = <0>;
@@ -181,7 +181,7 @@
             flavor = "tap-preferred";
             bindings = <&kp GUI>, <&to LINUX>;
         };
-        td_mac: tapdance {
+        td_mac: tapdance_mac {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MAC";
             #binding-cells = <0>;
