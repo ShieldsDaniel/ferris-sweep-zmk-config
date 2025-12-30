@@ -133,24 +133,24 @@
         combo_linux {
             timeout-ms = <50>;
             key-positions = <27 28>;
-            bindings = td_linux;
+            bindings = <td_linux>;
         };
         combo_check_linux {
             timeout-ms = <50>;
             key-positions = <14 15>;
             layers = <1>;
-            bindings = check_linux;
+            bindings = <check_linux>;
         };
         combo_mac {
             timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <1>;
-            bindings = td_mac;
+            bindings = <td_mac>;
         };
         combo_check_mac {
             timeout-ms = <50>;
             key-positions = <14 15>;
-            bindings = check_mac;
+            bindings = <check_mac>;
         };
     };
     behaviors {
