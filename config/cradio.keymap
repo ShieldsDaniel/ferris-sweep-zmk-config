@@ -150,7 +150,7 @@
             timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <1>;
-            bindings = <&to MAC>;
+            bindings = <&to DEFAULT>;
         };
         combo_linux_os {
             timeout-ms = <50>;
