@@ -230,8 +230,8 @@
         //│  ESCAPE  │          │          │          │          │  │ Umlaut/ß │  ===     │          │  "       │  DELETE  │
             &kp ESC    &none      &none      &none      &none         GERMAN     &js_equal  &none      &kp DQT    &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ?       │  ~       │  _       │  -       │  \ (NUM) │  │  /       │  =       │  +       │  '       │  :       │
-            &kp QMARK  &kp TILDE  &kp UNDER  &kp MINUS &lt NUM BSLH   &kp FSLH   &kp EQUAL  &kp PLUS   &kp SQT    &kp COLON
+        //│  ?       │  ~       │  _       │  - (NUM) │  \       │  │  /       │  =       │  +       │  '       │  :       │
+            &kp QMARK  &kp TILDE &kp UNDER &lt NUM MINUS &kp BSLH     &kp FSLH   &kp EQUAL  &kp PLUS   &kp SQT    &kp COLON
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  TAB     │          │          │          │          │  │  ->      │  =>      │  ~>      │  `       │          │
             &kp TAB    &none      &none      &none      &none         &small_aro &fat_aro   &squig_aro &kp GRAVE  &none 
@@ -248,8 +248,8 @@
         //│  ESCAPE  │          │          │          │          │  │          │          │  <|       │         │  DELETE  │
             &kp ESC    &none      &none      &none      &none         &none      &none      &back_pipe  &none     &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼───────────┼─────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │  │  ^ (FUNC)│  &       │  |        │  *      │  ;       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT  &lt FUNC CARET &kp AMPS   &kp PIPE    &kp STAR  &kp SEMI
+        //│  !       │  @       │  #       │  $       │  %       │  │  ^       │  & (FUNC)│  |        │  *      │  ;       │
+            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET &lt FUNC AMPS &kp PIPE   &kp STAR  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼───────────┼─────────┼──────────┤
         //│  TAB     │          │          │          │          │  │          │          │  |>       │         │          │
             &kp TAB    &none      &none      &none      &none         &none      &none      &fwrd_pipe  &none     &none 
