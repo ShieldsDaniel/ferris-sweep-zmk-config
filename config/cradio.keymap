@@ -132,13 +132,13 @@
         };
         combo_linux {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <26 27>;
             layers = <0>;
             bindings = <&to LINUX>;
         };
         combo_mac_os {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             bindings = <&kp LGUI>;
         };
         combo_check_linux {
@@ -149,13 +149,13 @@
         };
         combo_mac {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <26 27>;
             layers = <1>;
             bindings = <&to DEFAULT>;
         };
         combo_linux_os {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             layers = <1>;
             bindings = <&kp LCTRL>;
         };
@@ -197,7 +197,7 @@
         //│  A       │  R       │  S       │  T       │  G  (MEH)│  │  M  (MEH)│  N       │  E       │  I       │  O       │
             &kp A      &kp R      &kp S      &kp T      MEH(G)        MEH(M)     &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H     (OS) ,  (LINUX) .       │  ENTER   │
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H  (LINUX) ,     (OS) .       │  ENTER   │
             &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
@@ -215,7 +215,7 @@
         //│  A       │  R       │  S       │  T       │  G  (GUI)│  │  M  (GUI)│  N       │  E       │  I       │  O       │
             &kp A      &kp R      &kp S      &kp T     &mt GUI G     &mt GUI M   &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H     (OS) ,    (MAC) .       │  ENTER   │
+        //│  Z  (MEDIA) X       │  C       │  D       │  V       │  │  K       │  H    (MAC) ,     (OS) .       │  ENTER   │
             &kp Z      &kp X      &kp C      &kp D      &kp V         &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │ LOWER    │ OSM CTLR      OSM SHIFT│SPC(RAISE)│
@@ -263,13 +263,13 @@
         adjust_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │  │  DOWN    │  LEFT    │          │          │          │
+        //│          │          │  SHIFT   │  ALT     │          │  │  DOWN    │  LEFT    │          │          │          │
             &none      &none     &kp LSHFT &kp LEFT_ALT &none         &kp DOWN   &kp LEFT   &none      &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  €       │  │          │  )       │  }       │  ]       │  >       │
             &kp LT     &kp LBKT   &kp LBRC   &kp LPAR   EURO          &none      &kp RPAR   &kp RBRC   &kp RBKT   &kp GT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  (RESET) │          │          │          │          │  │  UP      │  RIGHT   │          │          │  (RESET) │
+        //│  (RESET) │          │  CTRL    │  GUI     │          │  │  UP      │  RIGHT   │          │          │  (RESET) │
             &kp N0     &none      &kp LCTRL &kp LEFT_GUI &none        &kp UP     &kp RIGHT  &none      &none      &kp N1
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │  │          │          │
