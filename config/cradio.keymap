@@ -1,6 +1,5 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -233,7 +232,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ESCAPE  │          │          │  Umlaut  │  ß       ││          │  ===     │          │  "       │  DELETE  │
-            &kp ESC    &none      &none      LA(U)      LA(S)       &none      &js_equals &none      &kp DQT    &kp DEL 
+            &kp ESC    &none      &none      LA(U)      LA(S)       &none     &js_equals  &none      &kp DQT    &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ?       │  ~       │  _       │  - (NUM) │  \       ││  /       │  =       │  +       │  '       │  :       │
             &kp QMARK  &kp TILDE &kp UNDER &lt NUM MINUS &kp BSLH   &kp FSLH   &kp EQUAL  &kp PLUS   &kp SQT    &kp COLON
