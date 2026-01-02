@@ -28,16 +28,16 @@
 
 / {
     macros {
-        js_equals: js_equals {
-            label = "ZM_js_equal";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp EQUAL>
-                , <&macro_tap &kp EQUAL>
-                , <&macro_tap &kp EQUAL>
-                ;
-        };
+        /* js_equals: js_equals { */
+        /*     label = "ZM_js_equal"; */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings */
+        /*         = <&macro_tap &kp EQUAL> */
+        /*         , <&macro_tap &kp EQUAL> */
+        /*         , <&macro_tap &kp EQUAL> */
+        /*         ; */
+        /* }; */
         back_aro: back_aro {
             label = "ZM_back_arrow";
             compatible = "zmk,behavior-macro";
@@ -232,7 +232,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ESCAPE  │          │          │  Umlaut  │  ß       ││          │  ===     │          │  "       │  DELETE  │
-            &kp ESC    &none      &none      LA(U)      LA(S)       &none     &js_equals  &none      &kp DQT    &kp DEL 
+            &kp ESC    &none      &none      LA(U)      LA(S)       &none     &none       &none      &kp DQT    &kp DEL 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ?       │  ~       │  _       │  - (NUM) │  \       ││  /       │  =       │  +       │  '       │  :       │
             &kp QMARK  &kp TILDE &kp UNDER &lt NUM MINUS &kp BSLH   &kp FSLH   &kp EQUAL  &kp PLUS   &kp SQT    &kp COLON
