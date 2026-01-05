@@ -133,13 +133,13 @@
             timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <0>;
-            bindings = <&kp LGUI>;
+            bindings = <&sk LGUI>;
         };
         combo_linux_shortcuts {
             timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <1>;
-            bindings = <&kp LCTRL>;
+            bindings = <&sk LCTRL>;
         };
         combo_check_mac {
             timeout-ms = <50>;
@@ -267,7 +267,7 @@
         adjust_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  SHIFT   │  CTRL    │  ALTT    │  GUI     │          ││  DOWN    │  LEFT    │          │          │          │
+        //│  SHIFT   │  CTRL    │  ALT     │  GUI     │          ││  DOWN    │  LEFT    │          │          │          │
             &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &none       &kp DOWN   &kp LEFT   &none      &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  <       │  [       │  {       │  (       │  €       ││          │  )       │  }       │  ]       │  >       │
@@ -291,11 +291,11 @@
         //│          │          │          │          │          ││          │  4       │  5       │  6       │          │
             &none      &none      &none      &none      &none       &none      &kp N4     &kp N5     &kp N6     &none 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          ││  ,       │  1       │  2       │  3       │          │
-            &none      &none      &none      &none      &none       &kp COMMA  &kp N1     &kp N2     &kp N3     &none
+        //│  SHIFT   │          │          │  ALT     │          ││  ,       │  1       │  2       │  3       │          │
+            &sk LSHFT  &none      &none      &sk LALT   &none       &kp COMMA  &kp N1     &kp N2     &kp N3     &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 │          │          ││  .       │  0       │
-                                             &none      &none       &kp DOT    &kp N0
+        //                                 │  GUI     │  CTRL    ││  .       │  0       │
+                                             &sk LGUI   &sk LCTRL   &kp DOT    &kp N0
         //                                 ╰──────────┴──────────╯╰──────────┴──────────╯
             >;
         };
